@@ -1,21 +1,16 @@
 import java.util.ArrayList;
 
-public class Deposito{
-    private ArrayList<Bebida> var;
+public class Deposito<T>{
+    private ArrayList<T> almacen;
     public Deposito(){
-        var = new ArrayList<Bebida>();
+        almacen = new ArrayList<T>();
     }
-    public void addBebida(Bebida a){
-        var.add(a);
+    public void addT(T a){
+        almacen.add(a);
     }
-    public Bebida getBebida(){
-        if(var.size() <= 0){
-            return null;
-        }
-        else{
-            Bebida aux = var.get(0);
-            var.remove(0);
-            return aux;
-        }
+    public T getT(){
+        T x = var.get(0);
+        almacen.remove(0);
+        return x;
     }
 }
