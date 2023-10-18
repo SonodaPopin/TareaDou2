@@ -3,6 +3,6 @@ public class CocaCola extends Bebida{
         super(serie);
     }
     public String consumir(){
-        return "cocacola";
+        return "CocaCola";
     }
 }
