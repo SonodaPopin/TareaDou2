@@ -2,27 +2,27 @@ public class Expendedor{
     private Deposito coca;
     private Deposito sprite;
     private DepositoM monVu;
-    private int precioBebidas;
+    private int precioProducto;
     public static final int COCA=1;
     public static final int SPRITE=2;
-    public Expendedor(int numBebidas, int precioBebidas){
-        this.precioBebidas = precioBebidas;
+    public Expendedor(int numProductos, int precioProducto){
+        this.precioProducto = precioProducto;
         coca = new Deposito();
         sprite = new Deposito();
-        for(int i = 0; i < numBebidas; i++){
-            coca.addBebida(new CocaCola(i));
+        for(int i = 0; i < numProductos; i++){
+            coca.addProducto(new CocaCola(i));
         }
-        for(int i = 0; i < numBebidas; i++){
-            sprite.addBebida(new Sprite(i));
+        for(int i = 0; i < numProductos; i++){
+            sprite.addProducto(new Sprite(i));
         }
         monVu = new DepositoM();
     }
-    public Bebida comprarBebida(Moneda m, int cual) {
+    public Producto comprarProducto(Moneda m, int cual) {
         if(m == null){
             return null;
         }
         int valorMoneda = m.getValor();
-        if (valorMoneda < this.precioBebidas) {
+        if (valorMoneda < this.precioProducto) {
             while(valorMoneda != 0){
                 monVu.addMoneda(new Moneda100());
                 valorMoneda -= 100;
@@ -31,18 +31,18 @@ public class Expendedor{
         }
         else{
             if(cual == COCA){
-                Bebida b = coca.getBebida();
-                if(b != null) {
-                    if(valorMoneda == this.precioBebidas){
-                        return b;
+                Producto p = coca.getProducto();
+                if(p != null) {
+                    if(valorMoneda == this.precioProducto){
+                        return p;
                     }
                     else {
-                        valorMoneda -= this.precioBebidas;
+                        valorMoneda -= this.precioProducto;
                         while (valorMoneda != 0) {
                             monVu.addMoneda(new Moneda100());
                             valorMoneda = valorMoneda - 100;
                         }
-                        return b;
+                        return p;
                     }
                 }
                 else{
@@ -54,18 +54,18 @@ public class Expendedor{
                 }
             }
             else if(cual == SPRITE){
-                Bebida b = sprite.getBebida();
-                if(b != null) {
-                    if(valorMoneda == this.precioBebidas){
-                        return b;
+                Producto p = sprite.getProducto();
+                if(p != null) {
+                    if(valorMoneda == this.precioProducto){
+                        return p;
                     }
                     else {
-                        valorMoneda -= this.precioBebidas;
+                        valorMoneda -= this.precioProducto;
                         while (valorMoneda != 0) {
                             monVu.addMoneda(new Moneda100());
                             valorMoneda = valorMoneda - 100;
                         }
-                        return b;
+                        return p;
                     }
                 }
                 else{
