@@ -1,91 +1,24 @@
 public class Expendedor{
-    private Deposito coca;
-    private Deposito sprite;
-    private DepositoM monVu;
-    private int precioProducto;
-    public static final int COCA=1;
-    public static final int SPRITE=2;
-    public Expendedor(int numProductos, int precioProducto){
-        this.precioProducto = precioProducto;
-        coca = new Deposito();
-        sprite = new Deposito();
+    public Expendedor(int numProductos){
+        cocas = new Deposito<CocaCola>();
+        sprites = new Deposito<Sprite>();
+        fantas = new Deposito<Fanta>();
+        superochos = new Deposito<Super8>();
+        snickers = new Deposito<Snicker>();
+        vuelto = new Deposito<Moneda>();
+        
         for(int i = 0; i < numProductos; i++){
-            coca.addProducto(new CocaCola(i));
+            cocas.addT(new CocaCola(i));
+            sprites.addT(new Sprite(i));
+            fantas.addT(new Fanta(i));
+            superochos.addT(new Super8(i));
+            snickers.addT(new Snicker(i));
         }
-        for(int i = 0; i < numProductos; i++){
-            sprite.addProducto(new Sprite(i));
-        }
-        monVu = new DepositoM();
-    }
+    }   
     public Producto comprarProducto(Moneda m, int cual) {
-        if(m == null){
-            return null;
-        }
-        int valorMoneda = m.getValor();
-        if (valorMoneda < this.precioProducto) {
-            while(valorMoneda != 0){
-                monVu.addMoneda(new Moneda100());
-                valorMoneda -= 100;
-            }
-            return null;
-        }
-        else{
-            if(cual == COCA){
-                Producto p = coca.getProducto();
-                if(p != null) {
-                    if(valorMoneda == this.precioProducto){
-                        return p;
-                    }
-                    else {
-                        valorMoneda -= this.precioProducto;
-                        while (valorMoneda != 0) {
-                            monVu.addMoneda(new Moneda100());
-                            valorMoneda = valorMoneda - 100;
-                        }
-                        return p;
-                    }
-                }
-                else{
-                    while(valorMoneda != 0){
-                        monVu.addMoneda(new Moneda100());
-                        valorMoneda -= 100;
-                    }
-                    return null;
-                }
-            }
-            else if(cual == SPRITE){
-                Producto p = sprite.getProducto();
-                if(p != null) {
-                    if(valorMoneda == this.precioProducto){
-                        return p;
-                    }
-                    else {
-                        valorMoneda -= this.precioProducto;
-                        while (valorMoneda != 0) {
-                            monVu.addMoneda(new Moneda100());
-                            valorMoneda = valorMoneda - 100;
-                        }
-                        return p;
-                    }
-                }
-                else{
-                    while(valorMoneda != 0){
-                        monVu.addMoneda(new Moneda100());
-                        valorMoneda -= 100;
-                    }
-                    return null;
-                }
-            }
-            else{
-                while(valorMoneda != 0) {
-                    monVu.addMoneda(new Moneda100());
-                    valorMoneda -= 100;
-                }
-                return null;
-            }
-        }
-    }
-    public Moneda getVuelto(){
-        return monVu.getMoneda();
+    	int valorMoneda = m.getValor();
+    	public Moneda getVuelto(){
+    		return vuelto.getT();
+    	}
     }
 }

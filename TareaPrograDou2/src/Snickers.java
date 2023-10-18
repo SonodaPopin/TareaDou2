@@ -1,8 +1,8 @@
-public class Snickers extends Dulce{
-    public Snickers(int serie){
+public class Snicker extends Dulce{
+    public Snicker(int serie){
         super(serie);
     }
     public String consumir(){
-        return "snickers";
+        return "snicker";
     }
 }
