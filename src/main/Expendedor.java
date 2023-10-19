@@ -25,7 +25,19 @@ public class Expendedor{
         stock.add(superochos);
         stock.add(snickers);
     }   
-    public Producto comprarProducto(Moneda m, int cual) {
+    public Producto comprarProducto(Moneda m, int cual)throws Exception {
+    	if (m == null) {
+    		throw new PagoIncorrectoException("Moneda no válida");
+    	}
+    	else if (cual < 0 || cual > 4) {
+    		throw new NoHayProductoException("Producto no válido");
+    	}
+    	else if (stock.get(cual).getCantidad() == 0) {
+    		throw new NoHayProductoException("No quedan productos");
+    	}
+    	else if (m.getValor()<Inventario.getPrecio(cual)) {
+    		throw new PagoInsuficienteException("No tienes suficiente dinero");
+    	}
     	int vuelto = m.getValor() - Inventario.getPrecio(cual);
     	for (int i=0; i<vuelto/100; i++) {
     		monedas.addT(new Moneda100());

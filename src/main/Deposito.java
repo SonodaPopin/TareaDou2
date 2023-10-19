@@ -15,4 +15,7 @@ public class Deposito<T>{
         almacen.remove(0);
         return x;
     }
+    public int getCantidad() {
+    	return almacen.size();
+    }
 }
