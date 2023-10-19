@@ -17,7 +17,7 @@ public class Expendedor{
         }
     }   
     public Producto comprarProducto(Moneda m, int cual) {
-    	int valorMoneda = m.getValor();
+    	int vuelto = m.getValor() - Inventario.getPrecio(cual);
     }
     public Moneda getVuelto(){
     	return vuelto.getT();

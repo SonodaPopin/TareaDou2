@@ -10,4 +10,7 @@ public enum Inventario {
 	Inventario (int precio){
 		this.precio = precio;
 	}
+	public static int getPrecio(int a) {
+		return Inventario.values()[a].precio;
+	}
 }
