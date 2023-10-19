@@ -1,14 +1,13 @@
 package main;
 
 public class Expendedor{
-    public Expendedor(int numProductos){
-        Deposito cocas = new Deposito<CocaCola>();
-        Deposito sprites = new Deposito<Sprite>();
-        Deposito fantas = new Deposito<Fanta>();
-        Deposito superochos = new Deposito<Super8>();
-        Deposito snickers = new Deposito<Snicker>();
-        Deposito vuelto = new Deposito<Moneda>();
-        
+    Deposito<Moneda> vuelto = new Deposito<>();
+    Deposito<CocaCola> cocas = new Deposito<>();
+    Deposito<Sprite> sprites = new Deposito<>();
+    Deposito<Fanta> fantas = new Deposito<>();
+    Deposito<Super8> superochos = new Deposito<>();
+    Deposito<Snicker> snickers = new Deposito<>();
+    public Expendedor(int numProductos){        
         for(int i = 0; i < numProductos; i++){
             cocas.addT(new CocaCola(i));
             sprites.addT(new Sprite(i));
@@ -19,8 +18,8 @@ public class Expendedor{
     }   
     public Producto comprarProducto(Moneda m, int cual) {
     	int valorMoneda = m.getValor();
-    	public Moneda getVuelto(){
-    		return vuelto.getT();
-    	}
+    }
+    public Moneda getVuelto(){
+    	return vuelto.getT();
     }
 }
