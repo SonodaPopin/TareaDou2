@@ -5,4 +5,7 @@ public abstract class Moneda{
         return this;
     }
     public abstract int getValor();
+    public String toString(){
+        return "Moneda: " + "\n" + " Valor: " + getValor() + ".";
+    }
 }

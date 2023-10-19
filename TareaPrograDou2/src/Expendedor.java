@@ -1,11 +1,11 @@
 public class Expendedor{
     public Expendedor(int numProductos){
-        cocas = new Deposito<CocaCola>();
-        sprites = new Deposito<Sprite>();
-        fantas = new Deposito<Fanta>();
-        superochos = new Deposito<Super8>();
-        snickers = new Deposito<Snicker>();
-        vuelto = new Deposito<Moneda>();
+        Deposito cocas = new Deposito<CocaCola>();
+        Deposito sprites = new Deposito<Sprite>();
+        Deposito fantas = new Deposito<Fanta>();
+        Deposito superochos = new Deposito<Super8>();
+        Deposito snickers = new Deposito<Snicker>();
+        Deposito vuelto = new Deposito<Moneda>();
         
         for(int i = 0; i < numProductos; i++){
             cocas.addT(new CocaCola(i));

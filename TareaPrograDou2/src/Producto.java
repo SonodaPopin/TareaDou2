@@ -7,5 +7,7 @@ public abstract class Producto {
         return serie;
     }
     public abstract String consumir();
-
+    public String toString() {
+        return "Serie: " + getSerie() + " Que consumiste: " + consumir() + ".";
+    }
 }
