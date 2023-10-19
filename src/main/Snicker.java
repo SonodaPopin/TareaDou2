@@ -1,9 +1,11 @@
-public class Sprite extends Bebida{
-    public Sprite(int serie){
+package main;
+
+public class Snicker extends Dulce{
+    public Snicker(int serie){
         super(serie);
     }
     public String consumir(){
-        return "sprite";
+        return "snicker";
     }
     public String toString(){
         return super.toString();

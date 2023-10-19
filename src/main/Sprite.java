@@ -1,9 +1,12 @@
-public class Fanta extends Bebida{
-    public Fanta(int serie){
+package main;
+
+
+public class Sprite extends Bebida{
+    public Sprite(int serie){
         super(serie);
     }
     public String consumir(){
-        return "fanta";
+        return "sprite";
     }
     public String toString(){
         return super.toString();

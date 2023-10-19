@@ -1,3 +1,5 @@
+package main;
+
 public class Expendedor{
     public Expendedor(int numProductos){
         Deposito cocas = new Deposito<CocaCola>();

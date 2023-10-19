@@ -1,9 +1,11 @@
-public class Moneda100 extends Moneda{
-    public Moneda100(){
+package main;
+
+public class Moneda500 extends Moneda{
+    public Moneda500(){
         super();
     }
     public int getValor(){
-        return 100;
+        return 500;
     }
     public String toString(){
         return super.toString();

@@ -1,3 +1,5 @@
+package main;
+
 public class Comprador{
     private String sonido;
     private int vuelto;

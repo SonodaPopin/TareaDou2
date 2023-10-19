@@ -1,3 +1,5 @@
+package main;
+
 import java.util.ArrayList;
 
 public class Deposito<T>{
@@ -9,7 +11,7 @@ public class Deposito<T>{
         almacen.add(a);
     }
     public T getT(){
-        T x = var.get(0);
+        T x = almacen.get(0);
         almacen.remove(0);
         return x;
     }

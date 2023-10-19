@@ -1,9 +1,11 @@
-public class Snicker extends Dulce{
-    public Snicker(int serie){
+package main;
+
+public class Super8 extends Dulce{
+    public Super8(int serie){
         super(serie);
     }
     public String consumir(){
-        return "snicker";
+        return "super8";
     }
     public String toString(){
         return super.toString();
