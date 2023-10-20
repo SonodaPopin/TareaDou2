@@ -1,5 +1,6 @@
 package test;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
@@ -18,9 +19,8 @@ class getVueltoTest {
 	public void testGetVuelto() throws Exception {
 		Expendedor exp = new Expendedor(5);
 		Moneda m = new Moneda500();
-		Moneda m2 = new Moneda100();
-		Producto p = exp.comprarProducto(m, 1);
+		exp.comprarProducto(m, 1);
 		Moneda dou = exp.getVuelto();
-		assertEquals(dou,dou);
+		assertTrue(dou instanceof Moneda100);
 	}
 }
