@@ -1,6 +1,6 @@
 package main;
 
-public class PagoInsuficienteException extends Exception{
+public class PagoInsuficienteException extends RuntimeException{
 
 	private static final long serialVersionUID = 2L;
 

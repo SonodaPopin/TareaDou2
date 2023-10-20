@@ -1,6 +1,6 @@
 package main;
 
-public class NoHayProductoException extends Exception{
+public class NoHayProductoException extends RuntimeException{
 
 	private static final long serialVersionUID = 3L;
 
