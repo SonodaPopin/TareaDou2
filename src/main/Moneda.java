@@ -8,6 +8,6 @@ public abstract class Moneda{
     }
     public abstract int getValor();
     public String toString(){
-        return "Moneda: " + "\n" + " Valor: " + getValor() + ".";
+        return "Moneda: " + "\n" + "Valor: " + getValor() + ".";
     }
 }
