@@ -3,24 +3,14 @@ package main;
 public class Comprador{
     private String sabor;
     private int vuelto;
-    public Comprador(Moneda m, int cual, Expendedor exp){
-    	try {
-    		Producto compra = exp.comprarProducto(m, cual);
-        	Moneda vueltoMoneda = exp.getVuelto();
-            while(vueltoMoneda != null) {
-            	vuelto += vueltoMoneda.getValor();
-            	vueltoMoneda = exp.getVuelto();
-            }
-            sabor = compra.consumir();
-    	}
-    	catch (RuntimeException e) {
-			exp.monedas.addT(m);
-			System.out.println(e.getMessage());
-			vuelto = exp.getVuelto().getValor();
-		}
-    	catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+    public Comprador(Moneda m, int cual, Expendedor exp)throws Exception{
+    	Producto compra = exp.comprarProducto(m, cual);
+        Moneda vueltoMoneda = exp.getVuelto();
+        while(vueltoMoneda != null) {
+            vuelto += vueltoMoneda.getValor();
+            vueltoMoneda = exp.getVuelto();
+        }
+        sabor = compra.consumir();
     }
     public int cuantoVuelto(){
         return vuelto;
