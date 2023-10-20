@@ -1,11 +1,11 @@
 package main;
 
 public enum Inventario {
-	COCACOLA(0),
-	SPRITE(0),
-	FANTA(0),
-	SUPER8(0),
-	SNICKER(0);
+	COCACOLA(500),
+	SPRITE(300),
+	FANTA(400),
+	SUPER8(700),
+	SNICKER(1000);
 	int precio;
 	Inventario (int precio){
 		this.precio = precio;
