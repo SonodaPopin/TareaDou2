@@ -1,16 +1,17 @@
 package main;
 
 public class Comprador{
-    private String sonido;
+    private String sabor;
     private int vuelto;
     public Comprador(Moneda m, int cual, Expendedor exp){
     	try {
-    		exp.comprarProducto(m, cual);
+    		Producto compra = exp.comprarProducto(m, cual);
         	Moneda vueltoMoneda = exp.getVuelto();
             while(vueltoMoneda != null) {
             	vuelto += vueltoMoneda.getValor();
             	vueltoMoneda = exp.getVuelto();
             }
+            sabor = compra.consumir();
     	}
     	catch (RuntimeException e) {
 			exp.monedas.addT(m);
@@ -24,7 +25,7 @@ public class Comprador{
     public int cuantoVuelto(){
         return vuelto;
     }
-    public String queconsumiste(){
-        return sonido;
+    public String queConsumiste(){
+        return sabor;
     }
 }
