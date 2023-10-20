@@ -10,8 +10,8 @@ import main.PagoIncorrectoException;
 class ExceptionTest {
 
 @Test
-@DisplayName("Test PagoInsuficienteException")
-public void testComprarBebidaSinSuficienteMoneda(){
+@DisplayName("Test PagoIncorrectoException")
+public void testPagoIncorrectoException(){
 	Expendedor exp = new Expendedor(2);
     Exception exception = Assert.assertThrows(PagoIncorrectoException.class,
             ()->{
