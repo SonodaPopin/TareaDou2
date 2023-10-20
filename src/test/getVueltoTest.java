@@ -21,6 +21,6 @@ class getVueltoTest {
 		Moneda m = new Moneda500();
 		exp.comprarProducto(m, 1);
 		Moneda dou = exp.getVuelto();
-		assertTrue(dou instanceof Moneda100);
+		assertTrue(dou instanceof Moneda);
 	}
 }

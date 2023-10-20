@@ -5,11 +5,10 @@ public class Comprador{
     private int vuelto = 0;
     public Comprador(Moneda m, int cual, Expendedor exp)throws Exception{
     	Producto compra = exp.comprarProducto(m, cual);
-        Moneda vueltoMoneda = exp.getVuelto();
-        while(vueltoMoneda != null) {
-            vuelto += vueltoMoneda.getValor();
-            vueltoMoneda = exp.getVuelto();
-        }
+    	Moneda vueltoMoneda;
+    	while ((vueltoMoneda = exp.getVuelto()) != null) {
+    	    vuelto += vueltoMoneda.getValor();
+    	}
         sabor = compra.consumir();
     }
     public int cuantoVuelto(){

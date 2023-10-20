@@ -45,6 +45,11 @@ public class Expendedor{
     	return stock.get(cual).getT();
     }
     public Moneda getVuelto(){
+    	if (monedas.getCantidad()>0) {
     	return monedas.getT();
+    	}
+    	else {
+    		return null;
+    	}
     }
 }
