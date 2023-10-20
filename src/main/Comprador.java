@@ -2,7 +2,7 @@ package main;
 
 public class Comprador{
     private String sabor;
-    private int vuelto;
+    private int vuelto = 0;
     public Comprador(Moneda m, int cual, Expendedor exp)throws Exception{
     	Producto compra = exp.comprarProducto(m, cual);
         Moneda vueltoMoneda = exp.getVuelto();

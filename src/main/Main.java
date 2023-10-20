@@ -2,7 +2,6 @@ package main;
 
 public class Main {
     public static void main(String[] args) {
-    	System.out.println("hola");
         Moneda m = new Moneda1500();
         Expendedor exp = new Expendedor(5);
         try{
