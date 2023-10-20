@@ -1,5 +1,7 @@
 package test;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.Assert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,8 +13,31 @@ import main.NoHayProductoException;
 import main.PagoIncorrectoException;
 import main.PagoInsuficienteException;
 import main.Moneda;
+import main.Moneda1000;
 
 class comprarProductoTest {
+	
+	
+	@Test
+	@DisplayName("Test ComprarUnProducto")
+	public void testComprarUnProducto() throws Exception{
+		Expendedor exp = new Expendedor(3);
+	    Moneda m = new Moneda1000();
+	    assertNotNull(exp.comprarProducto(m, 0));
+	}
+	
+	@Test
+	@DisplayName("Test ComprarcincoProductos")
+	public void testComprarCincoProductos() throws Exception{
+		Expendedor exp = new Expendedor(5);
+	    Moneda m = new Moneda1000();
+	    assertNotNull(exp.comprarProducto(m, 0));
+	    assertNotNull(exp.comprarProducto(m, 0));
+	    assertNotNull(exp.comprarProducto(m, 0));
+	    assertNotNull(exp.comprarProducto(m, 0));
+	    assertNotNull(exp.comprarProducto(m, 0));
+	}
+	
 
 	@Test
 	@DisplayName("Test PagoIncorrectoException")
