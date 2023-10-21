@@ -8,6 +8,6 @@ public class Snicker extends Dulce{
         return "snicker";
     }
     public String toString(){
-        return super.toString() + ", Producto: " + consumir();
+        return super.toString();
     }
 }

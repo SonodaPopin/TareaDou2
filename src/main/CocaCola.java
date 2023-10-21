@@ -8,6 +8,6 @@ public class CocaCola extends Bebida{
         return "cocacola";
     }
     public String toString(){
-        return super.toString() + ", Producto: " + consumir();
+        return super.toString();
     }
 }

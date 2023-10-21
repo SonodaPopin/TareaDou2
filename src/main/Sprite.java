@@ -8,6 +8,6 @@ public class Sprite extends Bebida{
         return "sprite";
     }
     public String toString(){
-        return super.toString() + ", Producto: " + consumir();
+        return super.toString();
     }
 }
