@@ -10,6 +10,7 @@ public class Expendedor{
     Deposito<Super8> superochos = new Deposito<>();
     Deposito<Snicker> snickers = new Deposito<>();
     private ArrayList<Deposito<? extends Producto>> stock;
+    
     public Expendedor(int numProductos){
         stock = new ArrayList<>();
         for(int i = 0; i < numProductos; i++){
@@ -24,7 +25,7 @@ public class Expendedor{
         stock.add(fantas);
         stock.add(superochos);
         stock.add(snickers);
-    }   
+    }
     public Producto comprarProducto(Moneda m, int cual)throws Exception {
     	if (m == null) {
     		throw new PagoIncorrectoException("Moneda no válida");
@@ -44,6 +45,7 @@ public class Expendedor{
     	}
     	return stock.get(cual).getT();
     }
+    
     public Moneda getVuelto(){
     	if (monedas.getCantidad()>0) {
     	return monedas.getT();
@@ -52,4 +54,8 @@ public class Expendedor{
     		return null;
     	}
     }
+ //   public String toString() {
+//		return "Producto: " + stock.get(cual).getT() + ", Vuelto: " + getVuelto() + ".";
+ //   }
+    
 }

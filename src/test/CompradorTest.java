@@ -16,20 +16,24 @@ class CompradorTest {
 	@Test
 	public void testComprador() throws Exception {
 		Expendedor exp = new Expendedor(5);
+		
 		Exception exception = Assert.assertThrows(Exception.class,
 	            ()->{
 	            Comprador Dou = new Comprador(null, 2, exp);
 	            });
+		
 		System.out.println(exception);
 	}
 	
 	@Test
 	public void testCuantoVuelto() throws Exception  {
 		Moneda m = new Moneda1500();
-		Expendedor exp = new Expendedor(5);
+		Expendedor exp = new Expendedor(2);
 		Comprador Dou = new Comprador(m, 2, exp);
+		
 		assertEquals(1100,Dou.cuantoVuelto());
-		System.out.println(m);
+		
+
 		System.out.println(Dou.cuantoVuelto());
 	}
 	
@@ -39,7 +43,9 @@ class CompradorTest {
 		Expendedor exp = new Expendedor(5);
 		Comprador Dou = new Comprador(m, 2, exp);
 		Producto compra = exp.comprarProducto(m, 2);
+		
 		assertEquals(compra.consumir(),Dou.queConsumiste());
+		
 		System.out.println(Dou.queConsumiste());
 	}
 }

@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import main.Expendedor;
 import main.Moneda;
-import main.Moneda100;
 import main.Moneda500;
 
 class getVueltoTest {
@@ -16,7 +15,7 @@ class getVueltoTest {
 	public void testGetVuelto() throws Exception {
 		Expendedor exp = new Expendedor(5);
 		Moneda m = new Moneda500();
-		exp.comprarProducto(m, 0);
+		exp.comprarProducto(m, 2);
 		Moneda dou = exp.getVuelto();
 		assertTrue(dou instanceof Moneda);
 	}

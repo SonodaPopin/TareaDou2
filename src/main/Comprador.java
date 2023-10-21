@@ -17,4 +17,7 @@ public class Comprador{
     public String queConsumiste(){
         return sabor;
     }
+    public String toString() {
+    	return "Producto: " + queConsumiste() + ", Vuelto: " + cuantoVuelto() + ".";
+    }
 }
