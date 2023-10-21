@@ -6,9 +6,7 @@ public class Main {
         Expendedor exp = new Expendedor(5);
         try{
         	Comprador Pepito = new Comprador(m, 2, exp);
-        	System.out.println("Transacción exitosa, " + Pepito);
-        	System.out.println(m.getSerie());
-        	
+        	System.out.println("Transacción exitosa, " + Pepito); 	
         }
         catch(RuntimeException e){
         	exp.monedas.addT(m);

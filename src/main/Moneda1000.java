@@ -4,9 +4,6 @@ public class Moneda1000 extends Moneda implements Comparable<Moneda>{
     public Moneda1000(){
         super();
     }
-    public Moneda getSerie() {
-    	return this;
-    }
     public int getValor(){
         return 1000;
     }
@@ -20,6 +17,6 @@ public class Moneda1000 extends Moneda implements Comparable<Moneda>{
     		}
     }
     public String toString(){
-        return super.toString();
+        return "Moneda: " + "\n" + "n° serie: " + this.hashCode() + " Valor: " + getValor() + ".";
     }
 }
