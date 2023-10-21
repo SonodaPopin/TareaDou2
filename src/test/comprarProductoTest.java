@@ -61,10 +61,11 @@ class comprarProductoTest {
 	@Test
 	@DisplayName("Test NoHayProductoException2")
 	public void testNoHayProductoException2(){
-		Expendedor exp = new Expendedor(0);
+		Expendedor exp = new Expendedor(1);
 		Moneda m = new Moneda1500();
 		Exception exception = Assert.assertThrows(NoHayProductoException.class,
 		         ()->{
+		         exp.comprarProducto(m, 3);
 		         exp.comprarProducto(m, 3);
 		         });
 	}
