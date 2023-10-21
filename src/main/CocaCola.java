@@ -1,13 +1,13 @@
 package main;
 
+/**
+ * Clase que representa un producto de tipo CocaCola
+ */
 public class CocaCola extends Bebida{
-    public CocaCola(int serie){
-        super(serie);
-    }
     public String consumir(){
         return "cocacola";
     }
     public String toString(){
-        return super.toString();
+        return super.toString() + ", Producto: " + consumir();
     }
 }

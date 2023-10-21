@@ -1,13 +1,13 @@
 package main;
 
+/**
+ * Clase que representa un producto de tipo snicker
+ */
 public class Snicker extends Dulce{
-    public Snicker(int serie){
-        super(serie);
-    }
     public String consumir(){
         return "snicker";
     }
     public String toString(){
-        return super.toString();
+        return super.toString() + ", Producto: " + consumir();
     }
 }

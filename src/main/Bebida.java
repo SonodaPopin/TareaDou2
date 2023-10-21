@@ -1,10 +1,10 @@
 package main;
 
+/**
+ * Clase que representa un producto de tipo bebida
+ */
 public abstract class Bebida extends Producto{
-    public Bebida(int serie){
-        super(serie);
-    }
     public String toString(){
-        return "Bebida: " + super.toString() + ".";
+        return super.toString();
     }
 }

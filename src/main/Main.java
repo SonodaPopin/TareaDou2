@@ -1,6 +1,13 @@
 package main;
 
+/**
+ * Clase Main
+ */
 public class Main {
+    /**
+     * Método main, incluye el try and catch
+     * @param args
+     */
     public static void main(String[] args) {
         Moneda m = new Moneda1500();
         Expendedor exp = new Expendedor(5);

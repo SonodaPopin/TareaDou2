@@ -1,9 +1,9 @@
 package main;
 
+/**
+ * Clase que representa una moneda de 500
+ */
 public class Moneda500 extends Moneda implements Comparable<Moneda>{
-    public Moneda500(){
-        super();
-    }
     public int getValor(){
         return 500;
     }
@@ -17,6 +17,6 @@ public class Moneda500 extends Moneda implements Comparable<Moneda>{
     		}
     }
     public String toString(){
-        return "Moneda: " + "\n" + "n° serie: " + this.hashCode() + " Valor: " + getValor() + ".";
+        return super.toString();
     }
 }
